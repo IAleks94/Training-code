@@ -5,7 +5,7 @@
 "maxlen": 120,
 "trailing": true,
 "curly":true,
-"strict":false,
+"strict":"global",
 "browser":true,
 "devel":true,
 "jquery":true,
