@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<script>
+  "use strict";
+  var numbers = [3, 5, 15, 6, 2, 1];
+
+  for (var j = 0; j < numbers.length; j++) {
+    for (var i = j + 1; i < numbers.length; i++) {
+      var little = numbers[j];
+      var itemStart = numbers[j];
+      if (numbers[i] < little) {
+        little = numbers[i];
+        numbers[j] = little;
+        numbers[i] = itemStart;
+        console.log(little);
+      }
+    }
+  }
+
+  console.log(numbers);
+</script>

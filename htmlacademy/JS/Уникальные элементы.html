@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<script>
+  var numbers = [1, 4, 5, 9, 2, 5, 1];
+var uniqueNumbers = [];
+var secondNumbers = [];
+
+for (var i = 0; i < numbers.length; i++) {
+for (var j = i + 1; j < numbers.length; j++) {
+if (numbers[i] === numbers[j]) {
+secondNumbers.push(numbers[i]);
+}
+}
+}
+for (var i = 0; i < numbers.length; i++) {
+for (var j = 0; j < secondNumbers.length; j++) {
+if (numbers[i] === secondNumbers[j]) {
+numbers.splice(i, 1);
+i–;
+}
+}
+}
+for (var i = 0; i < numbers.length; i++) {
+uniqueNumbers.push(numbers[i]);
+}
+</script>
