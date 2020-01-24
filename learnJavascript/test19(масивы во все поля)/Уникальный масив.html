@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<script>
+    'use strict'
+    function unique(arr) {
+        let uniqueArr = [arr[0]]
+        for (let item of arr) {
+            if (!uniqueArr.includes(item)) {
+                uniqueArr.push(item)
+            }
+        }
+        return uniqueArr
+    }
+
+
+
+
+
+    let strings = ["кришна", "кришна", "харе", "харе",
+        "харе", "харе", "кришна", "кришна", ":-O"
+    ];
+    alert(unique(strings));
+</script>

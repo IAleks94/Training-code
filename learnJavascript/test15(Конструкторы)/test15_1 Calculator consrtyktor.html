@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<script>
+    'use srtict'
+    function Calculator() {
+        this.sum = function (sum) {
+            return this.a + this.b
+        };
+        this.mul = function (nul) {
+           return this.a * this.b
+        };
+        this.read = function (read) {
+            this.a = +prompt("а ?", "");
+            this.b = +prompt("b ?", '');
+        };
+    }
+    let calculator = new Calculator();
+    calculator.read();
+
+    alert("Sum=" + calculator.sum());
+    alert("Mul=" + calculator.mul());
+</script>

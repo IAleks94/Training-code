@@ -1,0 +1,6 @@
+<script>
+'use strict'
+function applyAll(func) {
+  return func.apply(this, [].slice.call(arguments, 1));
+}
+</script>

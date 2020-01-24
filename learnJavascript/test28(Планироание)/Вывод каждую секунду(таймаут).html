@@ -1,0 +1,13 @@
+<script>
+    'use strict'
+    function printNumbers(from, to) {
+        let voise = from
+        let timerId = setTimeout( function alertNumber() {
+            alert(voise)
+            if (voise < to) {setTimeout(alertNumber, 1000)}
+            voise++
+        }, 1000);
+        
+    }
+    printNumbers(5, 10)
+</script>

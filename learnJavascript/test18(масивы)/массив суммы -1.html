@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<script>
+'use strict'
+function getMaxSubSum(arr) {
+  let maxSum = 0; // если элементов не будет - возвращаем 0
+
+  for (let i = arr.length; i < arr.length+1; i--) {
+    let sumFixedStart = 0;
+    arr.pop 
+    for (let j = i; j < arr.length+1; j--) {
+      sumFixedStart += arr[j];
+      maxSum = Math.max(maxSum, sumFixedStart);
+    }
+  }
+
+  return maxSum;
+}
+alert( getMaxSubSum([-1, 2, 3, -9]) ); // 5
+alert( getMaxSubSum([-1, 2, 3, -9, 11]) ); // 11
+alert( getMaxSubSum([-2, -1, 1, 2]) ); // 3
+alert( getMaxSubSum([1, 2, 3]) ); // 6
+alert( getMaxSubSum([100, -9, 2, -3, 5]) ); // 100

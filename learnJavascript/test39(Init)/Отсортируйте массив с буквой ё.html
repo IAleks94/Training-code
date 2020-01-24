@@ -1,0 +1,8 @@
+<script>
+    'use strict'
+    let animals = ["тигр", "ёж", "енот", "ехидна", "АИСТ", "ЯК"];
+
+    animals.sort((a, b) => a.localeCompare(b, ('ru')))
+
+    alert(animals); // АИСТ,ёж,енот,ехидна,тигр,ЯК
+</script>

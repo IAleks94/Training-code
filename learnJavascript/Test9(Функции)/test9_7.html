@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<script>
+'use srict'
+let age = +prompt( "Введите возраст", "");
+function checkAge(age) {
+     return (age<18) ? confirm('Родители разрешили?') : true ;
+}
+if ( checkAge(age) ) {
+  alert( 'Доступ получен' );
+} else {
+  alert( 'Доступ закрыт' );
+}
+</script>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<script>
+    'use strect'
+    function sumSalaries(salaries) {
+        let sum = 0;
+        let arrValues = Object.values(salaries);
+        for (let value of arrValues) {
+            sum += value;
+        };
+        return sum
+    }
+    let salaries = {
+        "John": 100,
+        "Pete": 300,
+        "Mary": 250
+    };
+    alert(sumSalaries(salaries)); // 650
+</script>

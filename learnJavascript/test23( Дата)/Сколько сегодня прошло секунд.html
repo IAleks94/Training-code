@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<script>
+    'use strict'
+    function getSecondsToday() {
+        let date = new Date()
+        let ear = date.getFullYear()
+        let mounth = date.getMonth()
+        let dey = date.getDate()
+        let date0 = new Date (ear, mounth, dey)
+        return (date - date0)/1000
+    }
+    alert ( getSecondsToday())
+</script>

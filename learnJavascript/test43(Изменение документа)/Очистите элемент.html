@@ -1,0 +1,15 @@
+<ol id="elem">
+    <li>Привет</li>
+    <li>Мир</li>
+</ol>
+
+<script>
+    function clear(elem) {
+        let li = elem.children
+        for (let i = 0; i < li.length; i) {
+            elem.removeChild(li[i])
+        }
+    }
+
+    clear(elem); // очищает список
+</script>

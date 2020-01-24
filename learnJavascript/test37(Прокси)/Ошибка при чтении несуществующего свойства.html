@@ -1,0 +1,24 @@
+<script>
+    'use strict'
+    let user = {
+        name: "John"
+    };
+
+    function wrap(target) {
+        return new Proxy(target, {
+            get(target, prop, reseiver) {
+                if (prop in target) {
+                    return Reflect.get(...arguments)
+                } else {
+                throw new ReferenceError(`Свойство не существует: "${prop}"`)
+                }
+            }
+            /* ваш код */
+        });
+    }
+
+    user = wrap(user);
+
+    alert(user.name); // John
+    alert(user.age); // Ошибка: такого свойства не существует
+</script>

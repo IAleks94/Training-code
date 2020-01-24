@@ -1,0 +1,27 @@
+<script>
+    'use strict'
+    function makeCounter() {
+        let count = 0
+        this.set = function(a) {
+            return count = a
+        }
+        this.decrease = function() {
+            return count--
+        }
+        return function () {
+            return count++
+        }   
+    }
+    let counter = new makeCounter();
+
+    alert(counter()); // 0
+    alert(counter()); // 1
+
+     counter.set(10); // установить новое значение счётчика
+
+    alert(counter()); // 10
+
+    counter.decrease(); // уменьшить значение счётчика на 1
+
+    alert(counter()); // 10 (вместо 11)
+</script>

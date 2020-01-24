@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<div id="tree"></div>
+<script>
+    let data = {
+        "Рыбы": {
+            "форель": {},
+            "лосось": {}
+        },
+
+        "Деревья": {
+            "Огромные": {
+                "секвойя": {},
+                "дуб": {}
+            },
+            "Цветковые": {
+                "яблоня": {},
+                "магнолия": {}
+            }
+        }
+    };
+
+    
+    function createTree(container, obg) {
+        container.append(dom(obg))
+    }
+    function dom(obg) {
+        if (!Object.keys(obg).length) return;
+
+        let ul = document.createElement('ul');
+
+        for (let key in obg) {
+            let li = document.createElement('li');
+            li.innerText = key;
+
+            let childUl = dom(obg[key])
+            if (childUl){
+                li.append(childUl);
+            }
+            ul.append(li)
+        }
+        return ul
+    }
+    let container = document.getElementById('tree');
+    createTree(container, data); // создаёт дерево в контейнере
+</script>

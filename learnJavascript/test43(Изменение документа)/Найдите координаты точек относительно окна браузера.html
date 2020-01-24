@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="index2.css">
+  <script>
+    document.onclick = function(e) { // показывает координаты точки клика
+      coords.innerHTML = e.clientX + ':' + e.clientY;
+    };
+  </script>
+</head>
+
+<body>
+
+  Кликните в любом месте для получения координат в контексте окна.
+  <br> Это для тестирования, чтобы проверить результат, который вы получили с помощью JavaScript.
+  <br>
+  <div id="coords">(координаты покажутся здесь)</div>
+
+
+  <div id="field">
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+  </div>
+
+
+  <div class="triangle-right" style="left:-20px;top:-176px">1</div>
+  <div class="triangle-right" style="left:-10px;top:-178px">3</div>
+  <div class="triangle-right" style="left:190px;top:-40px">4</div>
+  <div class="triangle-right" style="left:200px;top:-42px">2</div>
+
+  
+  <script>
+    let coord = field.getBoundingClientRect()
+ 
+
+    alert(`Координаты верхнего левого (внешнего) угла X: ${Math.round(coord.x)}; Y:${Math.round(coord.y)}`)
+    alert(`Координаты нижнего правого (внешнего) угла X: ${Math.round(coord.right)}; Y:${Math.round(coord.bottom)}`)
+    alert(`Координаты верхнего левого (внутреннего) угла X: ${Math.round(coord.x + field.clientLeft)}; Y:${Math.round(coord.y + field.clientTop)}`)
+    //для даного случая подходит так
+    alert(`Координаты нижнего правого (внутреннего) угла X: ${Math.round(coord.right - field.clientLeft)}; Y:${Math.round(coord.bottom - field.clientTop)}`)
+    // так должно работать со всем
+    alert(`Координаты нижнего правого (внутреннего) угла X: ${Math.round(coord.x + field.clientLeft + field.clientWidth)}; Y:${Math.round(coord.y + field.clientTop + field.clientHeight)}`)
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<script>
+"use strict"
+function testCheck(namber) {
+    if (namber > 20) {
+        return true;
+        } else {
+            return confirm ( " Ты уверен ?")
+        }
+}
+let namber = prompt( "Введите число больше 20", '');
+if (testCheck(namber) ) {
+    alert ("Молодец");
+} else {
+    alert (" Дец как мало");
+}
+</script>

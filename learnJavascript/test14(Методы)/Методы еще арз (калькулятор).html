@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<script>
+  "use srtict";
+  let calculator = {
+    read() {
+      let a = prompt("а ?", "");
+      let b = prompt(" b ?", "");
+      this.a = a;
+      this.b = b;
+    },
+    sum() {
+      let sum = 0;
+      return (sum += +this.a + +this.b);
+    },
+    mul() {
+        let mul;
+        return (mul = this.a * this.b)
+    }
+  };
+
+  calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+</script>

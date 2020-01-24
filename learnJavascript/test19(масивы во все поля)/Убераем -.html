@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<script>
+  "use sreict";
+  function camelize(str) {
+    let arr = str.split("");
+    let tire = arr.indexOf("-");
+
+    arr2 = arr.splice(tire, 2, arr[tire + 1].toUpperCase());
+    arr3 = arr.join("");
+    return arr3;
+  }
+  alert(camelize("background-color"));
+</script>

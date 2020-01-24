@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<script>
+    'use strict'
+    function getSecondsToTomorrow() {
+        let date = new Date();
+        let tomorrow = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+        let diff = tomorrow - date; // разница в миллисекундах
+        return Math.round(diff / 1000); // преобразуем в секунды
+    }
+    alert(getSecondsToTomorrow())
+</script>

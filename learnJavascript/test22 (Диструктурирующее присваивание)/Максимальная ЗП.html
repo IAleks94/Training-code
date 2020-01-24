@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<script>
+    'use sreict';
+    function topSalary(salaries) {
+        let maxSalaris = 0;
+        let returnName = null;
+        for (let [name, value] of Object.entries(salaries)) {
+            if (maxSalaris < value) {maxSalaris = value
+            returnName = name};
+        } return returnName
+    }
+    let salaries = {
+        "John": 100,
+        "Pete": 300,
+        "Mary": 250
+    };
+    alert(topSalary(salaries))
+</script>

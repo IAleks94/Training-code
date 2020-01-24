@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<script>
+  "use strict";
+  let x = prompt("Введите число", "");
+  let n = prompt("Введите степень числа", "");
+  function pow(x, n) {
+    if (checkNateral(n)) {
+      let pow = 1;
+      for (let i = 0; i < n; i++) {
+        pow *= x;
+      }
+      return alert(pow);
+    }
+    return alert(
+      `Степень ${n} не поддерживается, используйте натуральное число`
+    );
+  }
+  function checkNateral(n) {
+    if (n < 1) return false;
+    return true;
+  }
+  pow(x, n);
+</script>

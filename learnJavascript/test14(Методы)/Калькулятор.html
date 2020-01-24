@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<script>
+    'use strict'
+    let calculator = {
+        read() {
+            let a = prompt("a ?", '0');
+            let b = prompt("b ?", '0');
+            calculator.a = a;
+            calculator.b = b;
+        },
+        sum() {
+            return +calculator.a + +calculator.b;
+        },
+mul() {
+    return calculator.a * calculator.b;
+}
+    }
+    calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+</script>

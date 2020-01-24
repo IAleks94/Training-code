@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<script>
+    "use strict"
+    function getAverageAge(arrr) {
+        return arrr.reduce((prev, user) => prev + user.age, 0) / arrr.lenght;
+    }
+
+
+    let vasya = { name: "Вася", age: 25 };
+    let petya = { name: "Петя", age: 30 };
+    let masha = { name: "Маша", age: 29 };
+
+    let arr = [vasya, petya, masha];
+
+    alert(getAverageAge(arr));
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Создать список</h1>
+    <ui id='ui'></ui>
+
+    <script>
+        'use strict'
+        function list(){
+        let liMassage = prompt("Введите текст для элемента списка", '');
+        let li = document.createElement('li');
+        if (liMassage == null || liMassage == '')
+            return
+        li.textContent = liMassage;
+        ui.append(li);
+        return list()
+        }
+        list()
+    </script>
+
+</body>
+
+</html>

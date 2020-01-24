@@ -1,0 +1,18 @@
+<script>
+'use strict'
+function logPerson() {
+    console.log(`Rerson: ${this.name}, ${this.age}, ${this.job}`)
+}
+const person1 = {mame: 'Михаил', age: 22, job: 'Frontend'}
+const person2 = {mame: 'Елена', age: 19, job: 'SMM'}
+
+function bind(obg, fn ){
+ return function(...args){
+    fn.apply(obg, args)
+ }
+ 
+}
+
+bind(person1, logPerson)()
+bind(person2, logPerson)()
+</script>

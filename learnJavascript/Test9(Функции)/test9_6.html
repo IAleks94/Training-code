@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<script>
+'use strict'
+let age = +prompt( "Введите возраст", '');
+function checAge(age) {
+    if (age > 18) {
+        return true;
+    } else {
+        return confirm("Родители разрешили ?");
+    }
+}
+
+alert (checAge(age))
+</script>

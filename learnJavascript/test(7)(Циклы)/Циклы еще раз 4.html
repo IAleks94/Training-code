@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<script>
+  "use sttrict";
+  let i = 2;
+  let n = 10;
+ syda: for (; i <= n; i++) {
+      for (let j = 2; j < i; j++) {
+        if (i % j == 0)  continue syda;
+    }
+    alert(i);
+  }
+</script>

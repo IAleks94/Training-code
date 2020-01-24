@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<script>
+    'use strect'
+    function getWeekDay(date) {
+        if (date.getDay() == 0)  return 'ВС' 
+        if (date.getDay() == 1)  return 'ПН' 
+        if (date.getDay() == 2)  return 'ВТ' 
+        if (date.getDay() == 3)  return 'СР' 
+        if (date.getDay() == 4)  return 'ЧТ' 
+        if (date.getDay() == 5)  return 'ПТ' 
+        if (date.getDay() == 6)  return 'СБ' 
+    }
+    let date = new Date(2012, 0, 3);  // 3 января 2012 года
+    alert(getWeekDay(date));
+</script>
+

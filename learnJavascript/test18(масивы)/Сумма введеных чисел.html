@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<script>
+  "use strict";
+  function sumImput() {
+    let i = [];
+    while (true) {
+      let value = prompt("Введите число", "0");
+      if (value === "" || value === null || !isFinite(value))
+        break;
+      i.push(+value);
+    }
+    let sum = 0;
+    for (let key of i) {
+      sum += key;
+    }
+    return sum;
+  }
+
+  alert(sumImput());
+</script>

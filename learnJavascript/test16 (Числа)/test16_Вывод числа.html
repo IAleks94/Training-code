@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<script>
+    ' use strict'
+    
+    function readNumber() {
+        let a = prompt('Введите число', '0')
+        return (a === "" || a === null) ? null :
+            isFinite(a) ? +a : readNumber();
+    }
+    alert(`Число: ${readNumber()}`)
+</script>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<script>
+    'use ctrict';
+    let user = {
+        ege: 25,
+        name: "aleks",
+    };
+    function Умножение(obj) {
+        for (let key in obj) {
+            if (typeof obj[key] == "number") {
+                obj[key] *= 2;
+            }
+            alert(obj[key])
+        }
+    }
+    Умножение(user)
+    
+</script>

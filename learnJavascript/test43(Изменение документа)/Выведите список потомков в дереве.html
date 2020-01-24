@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <ul>
+        <li>Животные
+            <ul>
+                <li>Млекопитающие
+                    <ul>
+                        <li>Коровы</li>
+                        <li>Ослы</li>
+                        <li>Собаки</li>
+                        <li>Тигры</li>
+                    </ul>
+                </li>
+                <li>Другие
+                    <ul>
+                        <li>Змеи</li>
+                        <li>Птицы</li>
+                        <li>Ящерицы</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Рыбы
+            <ul>
+                <li>Аквариумные
+                    <ul>
+                        <li>Гуппи</li>
+                        <li>Скалярии</li>
+                    </ul>
+                </li>
+                <li>Морские
+                    <ul>
+                        <li>Морская форель</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        'use strict'
+        let heading = document.body.querySelectorAll('li') // получаем коллекцию li
+        let result = Array.from(heading).map(function (item) { //преобразовываем коллекцию в массив и применяем фунцкию к его элементам
+            if (item.children.length > 0) { // если длина children элемента > 0  то у него есть потомки
+                let quantityLi = item.querySelectorAll('li').length // берем элемент с потомками и находим их количество (они имеют тег li)
+                item.firstChild.data += `[${quantityLi}]`; // добовляем количество потомков к тексту
+            }
+        })
+    </script>
+
+</body>
+
+</html>

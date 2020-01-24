@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<script>
+  "use script";
+  function getMaxSubSum(arr) {
+    let sum = 0;
+    for (let key of arr) {
+      if (key > 0) {
+        sum += key;
+      }
+    }
+    return sum;
+  }
+  alert(getMaxSubSum([1, 2, -1, 2, 2]));
+</script>

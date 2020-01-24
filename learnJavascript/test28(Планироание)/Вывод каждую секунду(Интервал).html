@@ -1,0 +1,12 @@
+<script>
+    'use strict'
+    function printNumbers(from, to) {
+        let voise = from
+        let timerId = setInterval( function alertNumber() {
+            alert(voise)
+            if (voise == to) clearInterval(timerId)
+            voise++
+        }, 1000);
+    }
+    printNumbers(5, 10)
+</script>

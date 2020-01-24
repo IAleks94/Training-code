@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<script>
+'use strict'
+function formatDate(date) {
+    let now = new Date
+    let deltasec = date.getSeconds()-now.getSeconds()
+    let ear = date.getFullYear()
+    let day = date.getDate()
+    let month = date.getMonth() + 1;
+    let Hours = date.getHours()
+    let Minutes = date.getMinutes()
+    
+    if ((now - date) < 1000 ) return "прямо сейчас"
+    if ((now - date) < 60*1000 ) return `${Math.abs(deltasec)} сек. назад`
+    if ((now - date) < 60*60*1000 ) {return `${Math.abs(date.getMinutes()-now.getMinutes())} мин. назад`}
+    else return `${day}.${month}.${ear},  ${Hours}:${Minutes}`  
+}
+alert( formatDate(new Date(new Date - 300 * 30 * 1000)) ); // "30 сек. назад"
+</script>

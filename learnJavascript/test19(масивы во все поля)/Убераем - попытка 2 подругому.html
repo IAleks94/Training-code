@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<script>
+    'use strict'
+    function camelize(str) {
+        let str1 = str.split('-');
+        let str2 = str1.map(function fn(word, index) {
+            if (index == 0) return word
+            return word[0].toUpperCase() + word.slice(1);
+        })
+        return str2.join('');
+    }
+    alert(camelize("background-color") == 'backgroundColor')
+    alert(camelize("list-style-image") == 'listStyleImage')
+    alert(camelize("-webkit-transition") == 'WebkitTransition')
+</script>

@@ -1,0 +1,13 @@
+<script>
+'use strict'
+let target = {};
+let proxy = new Proxy(target, {}); // пустой handler
+
+proxy.test = 5; // записываем в прокси (1)
+alert(target.test); // 5, свойство появилось в target!
+
+alert(proxy.test); // 5, мы также можем прочитать его из прокси (2)
+
+for(let key in proxy) alert(key); // test, итерация работает (3)
+
+</script>
