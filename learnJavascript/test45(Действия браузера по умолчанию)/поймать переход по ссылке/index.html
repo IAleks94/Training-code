@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      #contents {
+        padding: 5px;
+        border: 1px green solid;
+      }
+    </style>
+  </head>
+
+  <body>
+    <fieldset id="contents">
+      <legend>#contents</legend>
+      <p>
+        Как насчёт того, чтобы прочитать <a href="http://wikipedia.org">Википедию</a> или посетить
+        <a href="http://w3.org"><i>W3.org</i></a> и узнать о современных стандартах?
+      </p>
+    </fieldset>
+
+    <script>
+      let areYouSure = event => {
+        let target = event.target.closest('a'); //находим ссылку если содержимое ссылки завернуто в тег
+        console.log('target: ', target);
+        if (!target) {return}  // если нет ссылки прерываем обработку  
+        if (!confirm(`Leave for ${target.href} ?`)) { //если  на запрос ответили утвердительно происходит переход 
+            event.preventDefault();   // иначе блокируем стандартное действие перехода по клику
+          }
+      };
+      contents.addEventListener("click", areYouSure);
+    </script>
+  </body>
+</html>
