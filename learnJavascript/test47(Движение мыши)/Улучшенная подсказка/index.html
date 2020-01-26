@@ -84,8 +84,18 @@
           divTooltip.textContent = messag;
           document.body.append(divTooltip);
           let coordTooltip = divTooltip.getBoundingClientRect();
-          divTooltip.style.top = `${coordTarget.top + coordTooltip.height}px`;
-          divTooltip.style.left = `${coordTarget.width / 2 - coordTooltip.width / 2}px`;
+
+          let top = coordTarget.top - coordTooltip.height - 5;
+          if (top < 0) {
+            top = coordTarget.top + coordTooltip.height - 15;
+          }
+          let left = coordTarget.left + (coordTarget.width / 2) - (coordTooltip.width / 2)
+          if (left < 0) {
+            left = 0;
+          }
+
+          divTooltip.style.top = top +'px' ;
+          divTooltip.style.left = left +'px' ;
           
         }
       };
