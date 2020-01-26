@@ -76,8 +76,8 @@
       let house = document.querySelector("#house");
       let createTooltip = event => {
         let target = event.target.closest('[data-tooltip]');
-        let messag = target.dataset.tooltip;
-        if (messag) {
+        if (target) {
+          let messag = target.dataset.tooltip;
           divTooltip = document.createElement("div");
           let coordTarget = target.getBoundingClientRect();
           divTooltip.classList.add("tooltip");
@@ -87,9 +87,9 @@
 
           let top = coordTarget.top - coordTooltip.height - 5;
           if (top < 0) {
-            top = coordTarget.top + coordTooltip.height - 15;
+            top = coordTarget.bottom + 5;
           }
-          let left = coordTarget.left + (coordTarget.width / 2) - (coordTooltip.width / 2)
+          let left = coordTarget.left + (coordTarget.width - coordTooltip.width) / 2
           if (left < 0) {
             left = 0;
           }
