@@ -1,2 +1,2 @@
 # Training-code
-Мои первые попытки кодить
+My first attempts to code
