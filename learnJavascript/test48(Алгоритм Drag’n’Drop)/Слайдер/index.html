@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="slider" class="slider">
+      <div class="thumb"></div>
+    </div>
+
+    <script>
+      let thumb = document.querySelector(".thumb");
+      let moveThumb = eventDown => {
+        //вычисляем координаты клика, поскольку движение происходит только
+        // в горизононтальной плоскости достаточно координаты Х;
+        let coordThumb = thumb.getBoundingClientRect()
+        let shiftX = eventDown.clientX - coordThumb.left;
+        //запоминаем Y а то вдруг убежит ХД,
+        let y = coordThumb.top;
+        //теперь делаем абсолютное позиционирование и отоброжение поверх всех
+        thumb.style.position = "absolute";
+        thumb.style.zIndex = 1000;
+        //вставляем рычажок в конец документа
+        document.body.append(thumb);
+
+        //создадим функцию движения
+        let moveThis = x => {
+          thumb.style.left = x - shiftX + 'px';
+          thumb.style.top = y + 'px';
+        };
+
+        //тут же перемещаем рычажок под мышку, в то же место где был клик
+        moveThis(eventDown.pageX);
+
+        //создаем функцию что будет двигать рычарычажок
+        let onMousMove = (eventMove) => {
+          // получаем кардинату Х мыши, и тут вспоминаем что слайдер не
+          //должен убегать с полоски
+          let leftBordThumb = eventMove.pageX - shiftX; //левый край ползунка
+          let RightBordThumb = eventMove.pageX - shiftX + coordThumb.width; //правый край ползунка
+
+          //получаем координаты слайдера
+          let slider = document.querySelector('.slider');
+          sliderCoord = slider.getBoundingClientRect();
+          //проверяем ползунок на выпадение со слайдера 
+          if (leftBordThumb < sliderCoord.left) { //слева
+            leftBordThumb = sliderCoord.left;
+          }
+          if (RightBordThumb > sliderCoord.right) { //справа
+            leftBordThumb = sliderCoord.right - coordThumb.width;
+          }
+          thumb.style.left = leftBordThumb + 'px';
+        }
+        //вешаем слушателя на документ при движении мышимыши
+        document.addEventListener('mousemove', onMousMove)
+
+        //если кнопку мыши отжали надо прекратить движение
+        let stopMove = (eventStop) => {
+          document.removeEventListener('mousemove', onMousMove)
+        }
+
+        //вешаем событие на документ (поидпоидее) 
+        document.addEventListener('mouseup', stopMove)
+      };
+
+      thumb.addEventListener("mousedown", moveThumb);
+    </script>
+  </body>
+</html>
