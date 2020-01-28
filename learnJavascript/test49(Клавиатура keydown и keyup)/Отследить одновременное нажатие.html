@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Нажмите "Q" и "W" вместе (язык значения не играет).
+    <script>
+      "use strict";
+
+      let runOnKeys = (func, ...keys) => {
+        let pressKey = new Set();
+
+        let press = event => {
+          pressKey.add(event.code);
+          for (let key of keys) {
+          if (!pressKey.has(key)) {
+            return;
+          }
+        } 
+        func()
+        pressKey.clear();
+        
+        };
+        document.addEventListener("keydown", press);
+
+        let pressClean = event => {
+          pressKey.delete(event.code)
+        }
+
+        document.addEventListener("keyup", pressClean);
+      };
+      runOnKeys(() => alert("работает"), "KeyQ", "KeyW");
+
+    </script>
+  </body>
+</html>

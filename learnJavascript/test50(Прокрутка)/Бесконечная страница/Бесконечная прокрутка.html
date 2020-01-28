@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <h1>Прокрути меня</h1>
+
+    <script>
+      "use strict";
+      let addContent = event => {
+        
+        while (true) {
+          let documentSize = document.documentElement.getBoundingClientRect();
+          let p = document.createElement("p");
+          let date = new Date();
+          p.textContent = `Текущее время: ${new Date()}`;
+          console.log(documentSize)
+          console.log(documentSize.bottom)
+          console.log(document.documentElement.clientHeight)
+          if (documentSize.bottom  > document.documentElement.clientHeight + 100) break;
+          document.body.append(p);
+        }
+      };
+
+      document.addEventListener("scroll", addContent);
+
+      addContent()
+
+    </script>
+  </body>
+</html>
