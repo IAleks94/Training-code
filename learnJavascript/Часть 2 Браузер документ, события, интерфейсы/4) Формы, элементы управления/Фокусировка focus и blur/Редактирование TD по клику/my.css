@@ -1,0 +1,12 @@
+/* ваши стили */
+.area {
+  resize: none;
+  width: 170px;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  position: absolute;
+  z-index: 100;
+}

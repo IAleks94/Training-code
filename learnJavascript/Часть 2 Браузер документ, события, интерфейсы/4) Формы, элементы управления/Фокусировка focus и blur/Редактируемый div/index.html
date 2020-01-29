@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="my.css" />
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <ul>
+    <li>Кликните на div ниже, чтобы отредактировать текст.</li>
+    <li>Нажатие на Enter или потеря фокуса с ввода сохранят содержимое.</li>
+  </ul>
+
+  HTML-код разрешён.
+
+  <div id="view" class="view" tabindex="1">Текст</div>
+
+  <script>
+    // ...ваш код...
+// Заметьте: <textarea> должен иметь class="edit"
+// my.css содержит стиль, чтобы <textarea> и <div> были одного размера
+document.addEventListener('focusin', function(e) {
+let el = e.target;
+if(el.id == 'view') {
+let t = document.createElement('textarea');
+t.className = 'edit';
+t.value = el.innerHTML;
+el.style.display = 'none';
+el.after(t);
+t.focus();
+t.onblur = function() {
+el.innerHTML = this.value;
+el.style.display = 'block';
+this.remove();
+};
+t.onkeydown = function(e) {
+if(e.key == 'Enter')
+this.onblur();
+};
+}
+});
+</script>
+
+</body>
+</html>
+  </script>
+</body>
+
+</html>

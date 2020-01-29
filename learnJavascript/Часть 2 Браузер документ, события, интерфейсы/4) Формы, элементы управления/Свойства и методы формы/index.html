@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <select id="genres">
+    <option value="rock">Рок</option>
+    <option value="blues" selected>Блюз</option>
+  </select>
+
+  <script>
+  let select = document.querySelector('#genres');
+  let options = Array.from(select.options)
+ .filter(option => option.selected)
+ .map(option => alert(`Значение выбранного пункта: ${option.value} Текст: ${option.textContent}`));
+ 
+ let option = new Option('Класика', "classic", true, true);
+
+ select.add(option);
+  </script>
+</body>
+</html>
