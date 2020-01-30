@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <style>
+    #mouse {
+      display: inline-block;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    #mouse:focus {
+      outline: 1px dashed black;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Кликните по "изображению" мыши и перемещайте её с помощью клавиш со стрелками.</p>
+
+  <pre id="mouse">
+ _   _
+(q\_/p)
+ /. .\
+=\_t_/=   __
+ /   \   (
+((   ))   )
+/\) (/\  /
+\  Y  /-'
+ nn^nn
+</pre>
+
+  <script>
+    mouse = document.querySelector("#mouse");
+    mouse.tabIndex = 0;
+
+    function move() {
+      this.style.position = "absolute";
+
+      function goTo(event) {
+
+        let elemSize = this.getBoundingClientRect();
+        let key = event.code;
+        let keys = "ArrowUp, ArrowRight, ArrowDown, ArrowLeft, KeyW, KeyD, KeyS, KeyA";
+        if (keys.indexOf(key) === -1) return;
+
+        switch (key) { //конструкция двигающая элемент на его ширину/высоту
+          case "ArrowUp":
+          case "KeyW":
+            this.style.top = elemSize.top - elemSize.height + "px";
+            break;
+          case "ArrowRight":
+          case "KeyD":
+            this.style.left = elemSize.left + elemSize.width + "px";
+            break;
+          case "ArrowDown":
+          case "KeyS":
+            this.style.top = elemSize.top + elemSize.height + "px";
+            break;
+          case "ArrowLeft":
+          case "KeyA":
+            this.style.left = elemSize.left - elemSize.width + "px";
+            break;
+        }
+
+      }
+
+      function deliteGoTo() {
+        this.removeEventListener("keydown", goTo);
+      }
+      this.addEventListener("keydown", goTo);
+      this.addEventListener("blur", deliteGoTo);
+    }
+
+    mouse.addEventListener("focus", move);
+  </script>
+</body>
+
+</html>
