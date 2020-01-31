@@ -20,6 +20,7 @@ function hideCover() {
 
 function showPrompt(html, callback) {
   showCover();
+  form.text.value ='';
   formContainer.hidden = false;
   form.text.focus();
   let promptMessage = document.querySelector("#prompt-message");
