@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body style="height:3000px">
 
-<body>
+  <h2>Кликните на кнопку ниже</h2>
+
+  <input type="button" value="Кликните, чтобы увидеть форму" id="show-button">
 
 
   <div id="prompt-form-container">
     <form id="prompt-form">
-      <div id="prompt-message">Введите что-нибудь...
-        <br>Пожалуйста..</div>
+      <div id="prompt-message"></div>
       <input name="text" type="text">
       <input type="submit" value="Ok">
       <input type="button" name="cancel" value="Отмена">
     </form>
   </div>
 
-<script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
