@@ -1,0 +1,21 @@
+<!doctype html>
+<script src="https://ru.js.cx/test/libs.js"></script>
+<script src="test.js"></script>
+<script>
+  async function getUsers(names) {
+    let jobs = []
+    for (name of names) {
+      let job = fetch(`https://api.github.com/users/${name}`).then(
+        response => {
+          if (response.ok != true) return null
+          return response.json();
+        },
+        eror => null);
+      jobs.push(job);
+    }
+
+    let result = await Promise.all(jobs)
+    return result
+  }
+</script>
+
