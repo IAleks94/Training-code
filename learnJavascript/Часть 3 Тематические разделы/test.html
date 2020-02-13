@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<script>
+'use strict';
+
+(async () => {
+let c = new AbortController();
+let signal = c.signal;
+let ourJob = new Promise((resolve, reject) => {
+signal.addEventListener('abort', reject);
+reject(new SyntaxError);
+});
+let ourJob2 = new Promise((resolve, reject) => {
+signal.addEventListener('abort', reject);
+});
+ourJob.then(s => alert(s),
+f => alert(f));
+c.abort();
+ourJob2.then(s => alert(s),
+f => console.log(f)); //abort! event
+})();
+</script>
