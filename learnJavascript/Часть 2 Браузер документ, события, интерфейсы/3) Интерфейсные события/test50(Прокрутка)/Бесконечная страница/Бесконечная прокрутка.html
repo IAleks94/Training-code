@@ -16,9 +16,9 @@
           let p = document.createElement("p");
           let date = new Date();
           p.textContent = `Текущее время: ${new Date()}`;
-          console.log(documentSize)
-          console.log(documentSize.bottom)
-          console.log(document.documentElement.clientHeight)
+          console.log('documentSize ', documentSize)
+          console.log('bottom', documentSize.bottom)
+          console.log('clientHeight', document.documentElement.clientHeight)
           if (documentSize.bottom  > document.documentElement.clientHeight + 100) break;
           document.body.append(p);
         }
