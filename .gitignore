@@ -20,3 +20,5 @@ htmlacademy/project.zip
 *.zip
 *.rar
 Glo Academy/*mySite
+
+Angular/node_modules
